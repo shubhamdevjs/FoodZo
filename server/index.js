@@ -10,6 +10,7 @@ import googleAuthConfig from './config/google.config'
 import Auth from "./API/Auth/index"
 import Food from "./API/Food/index"
 import Resaturant from "./API/Restaurant/index"
+import Image from "./API/Image/index"
 
 import ConnectDB from "./database/connection";
 
@@ -28,6 +29,7 @@ zomato.use(passport.session());
 zomato.use("/auth", Auth);
 zomato.use("/restaurant", Resaturant);
 zomato.use("/food", Food);  
+zomato.use("/image", Image);
 
 
 zomato.get("/", (req, res) => { 

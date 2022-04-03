@@ -6,7 +6,11 @@ import passport from "passport";
 import session from "express-session";
 
 import googleAuthConfig from './config/google.config'
+
 import Auth from "./API/Auth/index"
+import Food from "./API/Food/index"
+import Resaturant from "./API/Restaurant/index"
+
 import ConnectDB from "./database/connection";
 
 const zomato = express();
@@ -21,7 +25,9 @@ zomato.use(session({ secret: 'SECRET' }));
 zomato.use(passport.initialize());
 zomato.use(passport.session());
 
-zomato.use("/auth", Auth);  
+zomato.use("/auth", Auth);
+zomato.use("/restaurant", Resaturant);
+zomato.use("/food", Food);  
 
 
 zomato.get("/", (req, res) => { 

@@ -16,7 +16,7 @@ export default (passport) => {
             //after authenticating with google you will get these values
             async (accessToken, refreshToken, profile, done) => {
                 //creating a new user object
-
+  
                 const newUser = {
                     fullName: profile.displayName,
                     email: profile.emails[0].value,
